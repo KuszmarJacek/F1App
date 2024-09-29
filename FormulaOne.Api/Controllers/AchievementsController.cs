@@ -3,6 +3,7 @@ using FormulaOne.DataService.Repositories.Interfaces;
 using FormulaOne.Entities.DbSet;
 using FormulaOne.Entities.DTOs.Requests;
 using FormulaOne.Entities.DTOs.Responses;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Cryptography.X509Certificates;
 
@@ -10,7 +11,7 @@ namespace FormulaOne.Api.Controllers
 {
     public class AchievementsController : BaseController
     {
-        public AchievementsController(IUnitOfWork unitOfWork, IMapper mapper) : base(unitOfWork, mapper)
+        public AchievementsController(IUnitOfWork unitOfWork, IMapper mapper, IMediator mediator) : base(unitOfWork, mapper, mediator)
         {       
         }
 
