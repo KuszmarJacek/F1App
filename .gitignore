@@ -7,7 +7,7 @@
 .env
 
 # sqlite db files
-.db
+*.db
 
 # User-specific files
 *.rsuser
