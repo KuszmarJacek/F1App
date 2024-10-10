@@ -1,2 +1,0 @@
-// Command to run database update
-dotnet ef database update --verbose --project FormulaOne.DataService --startup-project FormulaOne.Api
