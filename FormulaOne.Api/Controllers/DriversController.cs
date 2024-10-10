@@ -7,13 +7,14 @@ using FormulaOne.Entities.DTOs.Requests;
 using FormulaOne.Entities.DTOs.Responses;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using Serilog;
 
 namespace FormulaOne.Api.Controllers
 {
     public class DriversController : BaseController
     {
         
-        public DriversController(IUnitOfWork unitOfWork, IMapper mapper, IMediator mediator) : base(unitOfWork, mapper, mediator)
+        public DriversController(IUnitOfWork unitOfWork, IMapper mapper, IMediator mediator, ILogger<DriversController> logger) : base(unitOfWork, mapper, mediator)
         {
         }
 
@@ -74,6 +75,7 @@ namespace FormulaOne.Api.Controllers
 
             if (!result)
             {
+                logg
                 return NotFound();
             }
 

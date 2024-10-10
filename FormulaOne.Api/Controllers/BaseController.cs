@@ -12,6 +12,7 @@ namespace FormulaOne.Api.Controllers
         protected readonly IUnitOfWork _unitOfWork;
         protected readonly IMapper _mapper;
         protected readonly IMediator _mediator;
+        protected readonly ILogger<BaseController> _logger;
 
         public BaseController(IUnitOfWork unitOfWork, IMapper mapper, IMediator mediator)
         {

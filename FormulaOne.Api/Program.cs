@@ -1,11 +1,14 @@
+using FormulaOne.Api.Services;
 using FormulaOne.DataService.Data;
 using FormulaOne.DataService.Repositories;
 using FormulaOne.DataService.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
-
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+
+builder.Host.SerilogConfiguration();
+
 builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlite(connectionString));
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
